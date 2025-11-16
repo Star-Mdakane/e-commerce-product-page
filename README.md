@@ -46,11 +46,10 @@ Users should be able to:
 1. I put the skeleton together, using desktop view first since it is complicated to do mobile first.
 2. I follewd up by doing tablet and mobile view.
 3. The sizing and the image sizes can prove challenging if you don't mind. I had troble with the p element inside the button so it was bus shrinking and ruin my UI.
-
+4. Still I can't colour the svg. I tried color and fill, even stroke size.
 
 
 ### Built with
-
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
