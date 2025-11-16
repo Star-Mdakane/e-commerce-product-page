@@ -44,6 +44,9 @@ Users should be able to:
 
 ## My process
 1. I put the skeleton together, using desktop view first since it is complicated to do mobile first.
+2. I follewd up by doing tablet and mobile view.
+3. The sizing and the image sizes can prove challenging if you don't mind. I had troble with the p element inside the button so it was bus shrinking and ruin my UI.
+
 
 
 ### Built with
@@ -52,10 +55,6 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 

@@ -48,14 +48,6 @@ img {
     width: 100%;
 }
 
-/* .btn {
-    display: flex;
-    gap: 0.5rem;
-    background-color: var(--orange-500);
-    color: var(--gy-950);
-    border-radius: 0.625rem;
-} */
-
 body {
     background-color: var(--white);
     color: var(--gy-950);
@@ -146,10 +138,9 @@ body {
 
 main {
     position: relative;
-    padding-top: 1.75rem;
+    padding: 1.75rem 0 5.25rem;
     max-width: 90rem;
-    width: 77%;
-    /* max-width: 90rem; */
+    width: 78.5%;
     margin: 0 auto;
     min-height: 100vh;
     display: flex;
@@ -170,6 +161,7 @@ header {
 }
 
 .burger {
+    display: none;
     width: 1rem;
     height: 1rem;
     margin-right: 1rem;
@@ -243,7 +235,7 @@ a {
 .ctrl-btns {
     display: none;
     margin: 0 auto;
-    width: 90%;
+    width: 95%;
     height: 2.5rem;
     /* display: flex; */
     align-items: center;
@@ -329,47 +321,65 @@ a {
 }
 
 .actions {
-    display: flex;
+    width: 100%;
     gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .num {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 9.81rem;
-    align-items: center;
-    /* justify-content: space-between; */
-    place-items: center;
+    gap: 0.5rem;
     padding: 0.5rem 1rem;
     background-color: var(--gy-50);
     border-radius: 0.625rem;
 
-
     & button {
-        width: 0.75rem;
-        display: flex;
-        align-items: center;
+        display: block;
+
+        & img {
+            width: 0.75rem;
+        }
+    }
+
+    & .plus {
+        text-align: right;
+    }
+
+    & .minus {
+        text-align: left;
     }
 }
 
-/* .add-to-cart {
+.num input {
+    text-align: center;
     width: 100%;
-} */
+    padding: 0.5rem;
+}
+
+.num>* {
+    flex: 1;
+}
 
 .actions button[type="submit"] {
     padding: 1rem 4.5rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     background-color: var(--orange-500);
     border-radius: 10px;
     color: var(--gy-950);
     fill: var(--gy-950);
 
-
     & img {
         width: 17.46px;
         height: 16px;
+    }
+
+    & p {
+        flex-shrink: 0;
     }
 }
 
@@ -398,14 +408,53 @@ nav a:hover {
 @media(max-width:48rem) {
     /* tablet view */
 
-    .main-page {
+    main {
         width: 80%;
+    }
+
+    .main-page {
+        width: 100%;
         margin: 0 auto;
     }
 
     .ctrl-btns {
         /* width: 90%; */
         display: flex;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .image-container {
+        position: relative;
+        border-radius: 1rem;
+        max-width: 100%;
+        max-height: 18.125rem;
+    }
+
+    .image-slide {
+        display: none;
+
+    }
+
+    .product-info {
+        max-width: 100%;
+    }
+
+    .actions>* {
+        flex: 1;
     }
 }
 
@@ -429,8 +478,67 @@ nav a:hover {
         color: var(--gy-500);
     }
 
+    main {
+        width: 100%;
+    }
+
     .main-page {
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
+        gap: 1.5rem;
+    }
+
+    header {
+        width: 87%;
+        margin: 0 auto;
+    }
+
+    .wrapper {
+        gap: 1.5rem;
+    }
+
+    .user {
+        gap: 1.5rem;
+    }
+
+    .avatar {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .image-container {
+        border-radius: 0;
+    }
+
+    .product-info {
+        max-width: 87%;
+        margin: 0 auto;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .num input {
+        text-align: center;
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .num button {
+        display: block;
+    }
+
+    .plus {
+        text-align: right;
+    }
+
+    .minus {
+        text-align: left;
+    }
+
+    .actions button[type="submit"] {
+        padding: 1rem 6.5rem;
     }
 }
