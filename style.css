@@ -115,12 +115,90 @@ body {
 }
 
 .cart {
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    position: absolute;
+    top: 5.75rem;
+    right: -4.25rem;
+    width: 22.5rem;
+    height: 16rem;
+    z-index: 5;
+    background-color: var(--white);
+    padding: 1.5rem 0;
+    border-radius: 0.625rem;
+    box-shadow: 0 0 20px rgb(0 0 0 / 0.1);
+}
+
+/* Cart */
+
+.cart {
     display: none;
 }
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+}
+
+.sel-cart-items {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.empty {
+    display: none;
+    color: var(--gy-500);
+    margin-top: 3.5rem;
+    text-align: center;
+}
+
+.remove {
+    width: 0.875rem;
+    height: 1rem;
+
+}
+
+.product-img {
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.cart-items-price {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.cart-container>p {
+    padding-left: 0.75rem;
+    border-bottom: 1px solid var(--gy-300);
+    padding-bottom: 1rem;
+}
+
+.checkout {
+    padding: 1rem 6.5rem;
+    background-color: var(--orange-500);
+    border-radius: 0.625rem;
+}
+
 
 /* Main Page */
 
 .main-page {
+    position: absolute;
+    top: 1.75rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -169,6 +247,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--gy-100);
 }
 
 .header-int {
@@ -196,7 +276,7 @@ nav ul {
 }
 
 a {
-    padding-bottom: 2rem;
+    padding-bottom: 2.8rem;
     transition: all 150ms ease-in-out;
 }
 
@@ -596,6 +676,7 @@ nav a:hover {
         transform: translateX(0%);
         opacity: 1;
     }
+
 }
 
 
@@ -705,4 +786,11 @@ nav a:hover {
     .menu {
         width: 15.625rem;
     }
+
+    .cart {
+        /* display: none; */
+        top: 5.25rem;
+        right: 0.5rem;
+    }
+
 }
