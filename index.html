@@ -55,8 +55,8 @@
       </div>
     </div>
     <section class="main-page">
-      <div class="wrapper">
-        <header>
+      <header>
+        <div class="header-int">
           <div class="burger">
             <img src="./images/icon-menu.svg" alt="menu icon">
           </div>
@@ -65,74 +65,78 @@
           </div>
           <nav>
             <ul>
-              <li><a href="#">Collection</a></li>
-              <li><a href="#">Men</a></li>
-              <li><a href="#">Women</a></li>
-              <li><a href="#"></a>About</li>
-              <li><a href="#">Contact</a></li>
+              <li><a class="text-3-r" href="#">Collection</a></li>
+              <li><a class="text-3-r" href="#">Men</a></li>
+              <li><a class="text-3-r" href="#">Women</a></li>
+              <li><a class="text-3-r" href="#">About</a></li>
+              <li><a class="text-3-r" href="#">Contact</a></li>
             </ul>
           </nav>
-          <div class="cart">
+        </div>
+        <div class="user">
+          <div class="header-cart">
             <img src="./images/icon-cart.svg" alt="cart">
           </div>
           <div class="avatar">
             <img src="./images/image-avatar.png" alt="avatar">
           </div>
-        </header>
-        <div class="wrapper">
-          <div class="image-section">
-            <div class="thumbnail-container">
-              <div class="ctrl-btns">
-                <button>
-                  <img src="./images/icon-previous.svg" alt="prevvious arrow">
-                </button>
-                <button>
-                  <img src="./images/icon-next.svg" alt="next arrow">
-                </button>
-              </div>
-            </div>
-            <div class="image-slide">
-              <div class="product">
-                <img src="./images/image-product-1.jpg" alt="two sneakers">
-              </div>
-              <div class="product">
-                <img src="./images/image-product-2.jpg" alt="sneakers with stones and branch">
-              </div>
-              <div class="product">
-                <img src="./images/image-product-3.jpg" alt="sneaker on stones with folded sheet">
-              </div>
-              <div class="product">
-                <img src="./images/image-product-4.jpg" alt="sneaker on stones">
-              </div>
+        </div>
+      </header>
+      <div class="wrapper">
+        <div class="image-section">
+          <div class="image-container">
+            <div class="ctrl-btns">
+              <button class="left-btn">
+                <img src="./images/icon-previous.svg" alt="previous arrow">
+              </button>
+              <button class="right-btn">
+                <img src="./images/icon-next.svg" alt="next arrow">
+              </button>
             </div>
           </div>
-          <div class="product-info">
-            <div class="brand-container">
-              <p class="text-comp">
-                Sneaker Company
-              </p>
-              <h1 class="text-h1">
-                Fall Limited Edition Sneakers
-              </h1>
+          <div class="image-slide">
+            <div class="product">
+              <img src="./images/image-product-1-thumbnail.jpg" alt="two sneakers">
             </div>
-            <p class="text-3-l">
-              These low-profile sneakers are your perfect casual wear companion. Featuring a
-              durable rubber outer sole, they’ll withstand everything the weather can offer.
+            <div class="product">
+              <img src="./images/image-product-2-thumbnail.jpg" alt="sneakers with stones and branch">
+            </div>
+            <div class="product">
+              <img src="./images/image-product-3-thumbnail.jpg" alt="sneaker on stones with folded sheet">
+            </div>
+            <div class="product">
+              <img src="./images/image-product-4-thumbnail.jpg" alt="sneaker on stones">
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="brand-container">
+            <p class="text-comp">
+              Sneaker Company
             </p>
-            <div class="pricing">
-              <div class="price">
-                <p class="text-2">
-                  $125.00
-                </p>
-                <p class="text-3-b">
-                  $250.00
-                </p>
-              </div>
-              <div class="discount text3-b">
-                50%
-              </div>
+            <h1 class="text-h1">
+              Fall Limited Edition Sneakers
+            </h1>
+          </div>
+          <p class="text-3-l">
+            These low-profile sneakers are your perfect casual wear companion. Featuring a
+            durable rubber outer sole, they’ll withstand everything the weather can offer.
+          </p>
+          <div class="pricing">
+            <div class="price">
+              <p class="text-2">
+                $125.00
+              </p>
+              <p class="text-3-b">
+                $250.00
+              </p>
             </div>
-            <form class="actions">
+            <div class="discount text-3-b">
+              50%
+            </div>
+          </div>
+          <form class="actions">
+            <div class="num">
               <button>
                 <img src="./images/icon-minus.svg" alt="minus">
               </button>
@@ -142,14 +146,14 @@
               <button>
                 <img src="./images/icon-plus.svg" alt="plus">
               </button>
-              <button type="submit">
-                <img src="./images/icon-cart.svg" alt="cart">
-                <p class="text-3-b">
-                  Add to cart
-                </p>
-              </button>
-            </form>
-          </div>
+            </div>
+            <button class="btn" type="submit">
+              <img src="./images/icon-cart.svg" alt="cart">
+              <p class="text-3-b">
+                Add to cart
+              </p>
+            </button>
+          </form>
         </div>
       </div>
     </section>
