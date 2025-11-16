@@ -35,11 +35,10 @@ ol {
 input,
 button {
     field-sizing: content;
-    background: none;
+    background: transparent;
     border: none;
     padding: 0;
     outline: none;
-    color: inherit;
     font: inherit;
     cursor: pointer;
 }
@@ -115,8 +114,7 @@ body {
 }
 
 .cart {
-    /* display: none; */
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 0.625rem;
     position: absolute;
@@ -133,9 +131,6 @@ body {
 
 /* Cart */
 
-.cart {
-    display: none;
-}
 
 .cart-container {
     display: flex;
@@ -144,7 +139,8 @@ body {
 }
 
 .cart-item {
-    display: flex;
+    display: none;
+    /* display: flex; */
     flex-direction: column;
     gap: 1.5rem;
     padding: 0 1.5rem;
@@ -157,7 +153,6 @@ body {
 }
 
 .empty {
-    display: none;
     color: var(--gy-500);
     margin-top: 3.5rem;
     text-align: center;
@@ -221,13 +216,30 @@ body {
     gap: 1rem;
     transform: translateX(-100%);
     opacity: 0;
+    z-index: 7;
 }
 
 .lightbox {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 9;
     display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / 0.5);
+    z-index: 2;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
 }
 
 main {
@@ -344,6 +356,7 @@ a {
     height: 2.5rem;
     background-color: var(--white);
     border-radius: 50%;
+
 }
 
 .ctrl-btns .left-btn {
@@ -356,10 +369,9 @@ a {
 }
 
 .ctrl-btns img {
-    width: 0.36rem;
+    width: 0.5rem;
     height: 0.71rem;
     stroke-width: 3px;
-    fill: var(--gy-950);
 }
 
 .image-slide {
@@ -601,6 +613,7 @@ nav a:hover {
 
 .product:hover img {
     opacity: 0.5;
+    cursor: pointer;
 }
 
 .product.active {
@@ -609,6 +622,28 @@ nav a:hover {
     & img {
         opacity: 0.25;
     }
+}
+
+.actions button:hover {
+    opacity: 0.5;
+}
+
+.close-menu:hover {
+    cursor: pointer;
+}
+
+.menu ul li:hover {
+    border-left: 3px solid var(--orange-500);
+    padding-left: 0.5rem;
+    cursor: pointer;
+}
+
+.close-lightbox:hover {
+    cursor: pointer;
+}
+
+.image-container:hover {
+    cursor: pointer;
 }
 
 @media(max-width:48rem) {
@@ -621,6 +656,7 @@ nav a:hover {
     .main-page {
         width: 100%;
         margin: 0 auto;
+        gap: 3rem;
     }
 
     .ctrl-btns {
