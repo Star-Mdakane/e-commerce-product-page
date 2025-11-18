@@ -47,6 +47,7 @@ Users should be able to:
 2. I follewd up by doing tablet and mobile view.
 3. The sizing and the image sizes can prove challenging if you don't mind. I had troble with the p element inside the button so it was bus shrinking and ruin my UI.
 4. Still I can't colour the svg. I tried color and fill, even stroke size.
+5. Thinking of clickable images. Changed them to button but thinking of changing them to checkboxes
 
 
 ### Built with

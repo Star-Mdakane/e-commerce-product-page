@@ -8,6 +8,28 @@ const cart = document.querySelector(".cart");
 const lightbox = document.querySelector(".lightbox");
 const viewLightbox = document.querySelector(".image-container");
 const lightboxClose = document.querySelector(".lightbox-close");
+const imageSlider = document.querySelectorAll(".image-slide .product");
+const imageSliderLightbox = document.querySelectorAll(".l-image-slide .product");
+
+imageSlider.forEach((img, index) => {
+    img.addEventListener("click", () => {
+        imageSlider.forEach((thumb) => thumb.classList.remove("active"));
+        imageSliderLightbox.forEach((thumb) => thumb.classList.remove("active"));
+        img.classList.add("active");
+        imageSliderLightbox[index].classList.add("active");
+    })
+})
+
+imageSliderLightbox.forEach((img, index) => {
+    img.addEventListener("click", () => {
+        imageSlider.forEach((thumb) => thumb.classList.remove("active"));
+        imageSliderLightbox.forEach((thumb) => thumb.classList.remove("active"));
+        img.classList.add("active");
+        imageSlider[index].classList.add("active");
+    })
+})
+
+
 
 
 
@@ -46,7 +68,14 @@ const closeLightbox = () => {
     closeOverlay();
 }
 
+const nextImg = () => {
 
+}
+
+
+// const previousImg = () => {
+//     const current = 
+// }
 
 overlay.addEventListener("click", () => {
     closeOverlay();

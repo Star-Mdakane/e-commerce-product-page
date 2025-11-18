@@ -35,7 +35,7 @@ ol {
 input,
 button {
     field-sizing: content;
-    background: transparent;
+    background: none;
     border: none;
     padding: 0;
     outline: none;
@@ -176,7 +176,7 @@ body {
     gap: 0.5rem;
 }
 
-.cart-container>p {
+.cart-container p:nth-of-type(1) {
     padding-left: 0.75rem;
     border-bottom: 1px solid var(--gy-300);
     padding-bottom: 1rem;
@@ -347,6 +347,7 @@ a {
     height: 2.5rem;
     align-items: center;
     justify-content: space-between;
+    z-index: 6;
 }
 
 .ctrl-btns .right-btn {
@@ -463,6 +464,8 @@ a {
     text-align: center;
     width: 100%;
     padding: 0.5rem;
+    font-weight: 700;
+    font-size: 1rem;
 }
 
 .num>* {
@@ -544,6 +547,7 @@ a {
     height: 3.5rem;
     align-items: center;
     justify-content: space-between;
+    z-index: 6;
 }
 
 .l-ctrl-btns .l-right-btn {
@@ -611,7 +615,14 @@ nav a:hover {
     border: 3px solid var(--orange-500);
 }
 
-.product:hover img {
+.avatar.active .header-cart svg {
+    color: var(--gy-500);
+    fill: var(--gy-500);
+    stroke: var(--gy-500);
+}
+
+.product:hover img,
+.product:focus-visible img {
     opacity: 0.5;
     cursor: pointer;
 }
@@ -628,9 +639,10 @@ nav a:hover {
     opacity: 0.5;
 }
 
-.close-menu:hover {
+/* .close-menu:hover {
     cursor: pointer;
-}
+    fill: var(--orange-500);
+} */
 
 .menu ul li:hover {
     border-left: 3px solid var(--orange-500);
@@ -638,9 +650,72 @@ nav a:hover {
     cursor: pointer;
 }
 
-.close-lightbox:hover {
+/* .close-lightbox:hover {
     cursor: pointer;
+    fill: var(--orange-500);
+} */
+
+/* svg */
+
+
+svg {
+    fill: currentColor;
 }
+
+svg path {
+    fill: inherit;
+}
+
+
+.ctrl-btns button svg {
+    stroke: var(--gy-950);
+    fill: none;
+    color: var(--gy-950);
+}
+
+.ctrl-btns button:hover svg,
+.ctrl-btns button:focus-visible svg {
+    stroke: var(--orange-500);
+    fill: none;
+    color: var(--orange-500);
+}
+
+.l-ctrl-btns button svg {
+    stroke: var(--gy-950);
+    fill: none;
+
+}
+
+.l-ctrl-btns button:hover svg {
+    stroke: var(--orange-500);
+    fill: none;
+}
+
+.header-cart svg {
+    fill: var(--gy-950);
+}
+
+.btn svg {
+    fill: var(--gy-950);
+}
+
+.lightbox-close svg {
+    fill: var(--gy-950);
+}
+
+.lightbox-close:hover svg {
+    fill: var(--orange-500);
+}
+
+.close-menu svg {
+    fill: var(--gy-950);
+}
+
+.close-menu:hover svg {
+    fill: var(--orange-500);
+}
+
+
 
 .image-container:hover {
     cursor: pointer;
