@@ -10,22 +10,33 @@ const viewLightbox = document.querySelector(".image-container");
 const lightboxClose = document.querySelector(".lightbox-close");
 const imageSlider = document.querySelectorAll(".image-slide .product");
 const imageSliderLightbox = document.querySelectorAll(".l-image-slide .product");
+const previewImg = document.querySelector(".image-container");
+const previewImgLightbox = document.querySelector(".l-image-container");
 
-imageSlider.forEach((img, index) => {
-    img.addEventListener("click", () => {
+
+imageSlider.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
         imageSlider.forEach((thumb) => thumb.classList.remove("active"));
         imageSliderLightbox.forEach((thumb) => thumb.classList.remove("active"));
-        img.classList.add("active");
+        btn.classList.add("active");
         imageSliderLightbox[index].classList.add("active");
+
+        const previewImg = document.querySelector(".image-container");
+        const newSrc = btn.querySelector('img').src.replace('-thumbnail', '');
+        previewImg.style.backgroundImage = `url(${newSrc})`;
     })
 })
 
-imageSliderLightbox.forEach((img, index) => {
-    img.addEventListener("click", () => {
+imageSliderLightbox.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
         imageSlider.forEach((thumb) => thumb.classList.remove("active"));
         imageSliderLightbox.forEach((thumb) => thumb.classList.remove("active"));
-        img.classList.add("active");
+        btn.classList.add("active");
         imageSlider[index].classList.add("active");
+
+        const previewImgLightbox = document.querySelector(".l-image-container");
+        const newSrc = btn.querySelector('img').src.replace('-thumbnail', '');
+        previewImgLightbox.style.backgroundImage = `url(${newSrc})`;
     })
 })
 
