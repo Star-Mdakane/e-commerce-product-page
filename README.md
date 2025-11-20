@@ -48,6 +48,8 @@ Users should be able to:
 3. The sizing and the image sizes can prove challenging if you don't mind. I had troble with the p element inside the button so it was bus shrinking and ruin my UI.
 4. Still I can't colour the svg. I tried color and fill, even stroke size.
 5. Thinking of clickable images. Changed them to button but thinking of changing them to checkboxes
+6. Getting the next and previous buttons to work on the lightbox.
+7. Tried and failed to change the colour of the svg even though I converted the images to svg, tried fill, color and stroke but nothing worked so I settled for background color.
 
 
 ### Built with

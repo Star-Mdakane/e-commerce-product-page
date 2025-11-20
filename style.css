@@ -25,6 +25,7 @@
 a {
     text-decoration: none;
     color: inherit;
+    outline: none;
 }
 
 ul,
@@ -122,11 +123,13 @@ body {
     right: -4.25rem;
     width: 22.5rem;
     height: 16rem;
-    z-index: 5;
+    z-index: 8;
     background-color: var(--white);
     padding: 1.5rem 0;
     border-radius: 0.625rem;
     box-shadow: 0 0 20px rgb(0 0 0 / 0.1);
+    transition: all 3s ease-in-out;
+
 }
 
 /* Cart */
@@ -139,8 +142,8 @@ body {
 }
 
 .cart-item {
-    display: none;
-    /* display: flex; */
+    /* display: none; */
+    display: flex;
     flex-direction: column;
     gap: 1.5rem;
     padding: 0 1.5rem;
@@ -153,6 +156,7 @@ body {
 }
 
 .empty {
+    display: none;
     color: var(--gy-500);
     margin-top: 3.5rem;
     text-align: center;
@@ -161,7 +165,7 @@ body {
 .remove {
     width: 0.875rem;
     height: 1rem;
-
+    cursor: pointer;
 }
 
 .product-img {
@@ -176,7 +180,7 @@ body {
     gap: 0.5rem;
 }
 
-.cart-container p:nth-of-type(1) {
+.cart-container>p:nth-of-type(1) {
     padding-left: 0.75rem;
     border-bottom: 1px solid var(--gy-300);
     padding-bottom: 1rem;
@@ -186,6 +190,37 @@ body {
     padding: 1rem 6.5rem;
     background-color: var(--orange-500);
     border-radius: 0.625rem;
+}
+
+.success.show {
+    display: flex;
+}
+
+.success {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / 0.9);
+    z-index: 10;
+}
+
+.success-content {
+    text-align: center;
+
+    & p {
+        margin-top: 3rem;
+        color: var(--white);
+    }
+}
+
+.success-content img {
+    width: 300px;
+    height: 300px;
 }
 
 
@@ -198,6 +233,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 6rem;
+    overflow: hidden;
     /* display: none; */
     /* min-height: 100%; */
     /* margin: 0 auto; */
@@ -217,6 +253,8 @@ body {
     transform: translateX(-100%);
     opacity: 0;
     z-index: 7;
+    transition: all 300ms ease-in-out;
+
 }
 
 .lightbox {
@@ -225,6 +263,7 @@ body {
     transform: translateX(-50%);
     z-index: 9;
     display: none;
+    transition: all 300ms ease-in-out;
 }
 
 .overlay {
@@ -289,7 +328,8 @@ nav ul {
 
 a {
     padding-bottom: 2.8rem;
-    transition: all 150ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    transform-origin: left;
 }
 
 .user {
@@ -318,6 +358,7 @@ a {
     grid-template-columns: repeat(2, 1fr);
     gap: 8rem;
     align-items: center;
+    overflow: hidden;
 }
 
 .image-section {
@@ -338,6 +379,8 @@ a {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    transform: scale(0.99);
+    transition: all 300ms ease-in-out;
 }
 
 .ctrl-btns {
@@ -348,6 +391,7 @@ a {
     align-items: center;
     justify-content: space-between;
     z-index: 6;
+    transition: all 300ms ease-in-out;
 }
 
 .ctrl-btns .right-btn {
@@ -378,6 +422,7 @@ a {
 .image-slide {
     display: flex;
     gap: 2rem;
+    transition: all 300ms ease-in-out;
 }
 
 .product {
@@ -433,6 +478,8 @@ a {
     gap: 1rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    transition: all 300ms ease-in-out;
+
 }
 
 .num {
@@ -597,16 +644,10 @@ a {
     gap: 1.5rem;
 }
 
-/* .l-ctrl-btns img {
-    width: 0.36rem;
-    height: 0.71rem;
-    stroke-width: 3px;
-    fill: var(--gy-950);
-} */
-
 
 /* active states */
-nav a:hover {
+nav a:hover,
+nav a:focus-visible {
     border-bottom: 4px solid var(--orange-500);
     transform-origin: left;
 }
@@ -635,28 +676,19 @@ nav a:hover {
     }
 }
 
-.actions button:hover {
+.actions button:hover,
+.actions button:focus-visible {
     opacity: 0.5;
 }
 
-/* .close-menu:hover {
-    cursor: pointer;
-    fill: var(--orange-500);
-} */
-
-.menu ul li:hover {
+.menu ul li:hover,
+.menu ul li:focus-visible {
     border-left: 3px solid var(--orange-500);
     padding-left: 0.5rem;
     cursor: pointer;
 }
 
-/* .close-lightbox:hover {
-    cursor: pointer;
-    fill: var(--orange-500);
-} */
-
 /* svg */
-
 
 svg {
     fill: currentColor;
@@ -678,6 +710,13 @@ svg path {
     stroke: var(--orange-500);
     fill: none;
     color: var(--orange-500);
+}
+
+.ctrl-btns button:hover,
+.ctrl-btns button:focus-visible,
+.l-ctrl-btns button:hover,
+.l-ctrl-btns button:focus-visible {
+    background-color: var(--orange-300);
 }
 
 .l-ctrl-btns button svg {
@@ -715,10 +754,10 @@ svg path {
     fill: var(--orange-500);
 }
 
-
-
-.image-container:hover {
+.image-container:hover,
+.image-container:focus-visible {
     cursor: pointer;
+    transform: scale(0.99);
 }
 
 @media(max-width:48rem) {
@@ -787,9 +826,7 @@ svg path {
         transform: translateX(0%);
         opacity: 1;
     }
-
 }
-
 
 @media(max-width:31rem) {
 
@@ -903,5 +940,4 @@ svg path {
         top: 5.25rem;
         right: 0.5rem;
     }
-
 }

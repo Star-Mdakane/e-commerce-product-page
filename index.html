@@ -51,6 +51,12 @@
               <img src="./images/icon-delete.svg" alt="delete items">
             </div>
           </div>
+          <div class="success">
+            <div class="success-content">
+              <img src="./images/Commons-emblem-success.svg.png" alt="success">
+              <p class="text-h1">Congratulations! Your Order Was Successfull.</p>
+            </div>
+          </div>
           <button class="checkout">Checkout</button>
         </div>
       </div>
@@ -143,15 +149,15 @@
               50%
             </div>
           </div>
-          <form class="actions">
+          <form class="actions" id="actions">
             <div class="num">
-              <button class="minus">
+              <button class="minus" type="button">
                 <img src="./images/icon-minus.svg" alt="minus">
               </button>
               <form-control>
-                <input type="text" name="number" id="number" value="0">
+                <input type="text" name="number" id="number" value="0" required>
               </form-control>
-              <button class="plus">
+              <button class="plus" type="button">
                 <img src="./images/icon-plus.svg" alt="plus">
               </button>
             </div>

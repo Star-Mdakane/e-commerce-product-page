@@ -15,10 +15,13 @@ const previewImgLightbox = document.querySelector(".l-image-container");
 const leftBtn = document.querySelector(".left-btn");
 const leftBtnLightbox = document.querySelector(".l-left-btn");
 const rightBtn = document.querySelector(".right-btn");
+const clearCart = document.querySelector(".remove");
+const success = document.querySelector(".success");
+const checkout = document.querySelector(".checkout");
 const rightBtnLightbox = document.querySelector(".l-right-btn");
+const form = document.getElementById("actions");
 
-
-
+console.log('Success element:', success);
 
 imageSlider.forEach((btn, index) => {
     btn.addEventListener("click", () => {
@@ -154,6 +157,101 @@ const closeLightbox = () => {
     closeOverlay();
 }
 
+const addTotal = (num) => {
+    return num * 125;
+}
+
+const loadCart = () => {
+    const emptyCart = document.querySelector(".empty");
+    const cartItem = document.querySelector(".cart-item");
+
+    const totalAmount = localStorage.getItem("amount");
+
+    if (!totalAmount || totalAmount === 0) {
+        emptyCart.style.display = "block"
+        cartItem.style.display = "none"
+
+    } else {
+
+
+        emptyCart.style.display = "none"
+        cartItem.style.display = "flex"
+    }
+}
+
+loadCart()
+// Event Handlers
+
+
+const loadAmount = () => {
+    const totalAmount = localStorage.getItem('amount');
+    totalAmount ? totalAmount : 0;
+}
+
+let amount = loadAmount;
+
+const addAmount = (amount) => {
+    const totalAmount = localStorage.getItem("amount");
+    const total = Number(totalAmount) + Number(amount)
+    saveAmount(total)
+}
+
+const saveAmount = (amount) => {
+    localStorage.setItem("amount", amount)
+}
+
+const clearAmount = () => {
+    localStorage.clear();
+    console.log('Amount cleared:', localStorage.getItem("amount"));
+}
+
+
+
+const numInput = document.querySelector('#number');
+let numValue = Number(numInput.value);
+
+const subtract = document.querySelector(".minus");
+const add = document.querySelector(".plus");
+
+subtract.addEventListener('click', () => {
+    if (numValue > 0) {
+        numValue--;
+        numInput.value = numValue;
+    }
+})
+
+add.addEventListener("click", () => {
+    numValue++;
+    numInput.value = numValue;
+})
+
+form.addEventListener("submit", (e) => {
+
+
+
+    let isValid = true;
+
+    numValue = Number(numInput.value);
+    if (isNaN(numValue) || numValue === 0) {
+        e.preventDefault();
+
+        isValid = false;
+    }
+
+    let total = addTotal(numValue);
+    addAmount(total);
+
+    // if (isValid) {
+
+    // }
+})
+
+// let numValue = Number(numInput);
+clearCart.addEventListener("click", () => {
+    clearAmount();
+    loadCart();
+})
+
 overlay.addEventListener("click", () => {
     closeOverlay();
     closeMenu();
@@ -189,6 +287,27 @@ lightboxClose.addEventListener("click", () => {
     closeOverlay();
     closeLightbox();
 });
+
+checkout.addEventListener("click", () => {
+    // success.style.display = "flex"
+    clearAmount();
+    success.classList.add("show");
+    setTimeout(() => {
+        loadCart();
+        success.classList.remove("show");
+    }, 3000)
+})
+
+// checkout.addEventListener("click", () => {
+//     console.log('Checkout clicked');
+//     if (success) {
+//         success.classList.add("show");
+//         console.log('Added "show" class');
+//     } else {
+//         console.log('Success element not found!');
+//     }
+// });
+
 
 rightBtn.addEventListener("click", nextImage);
 leftBtn.addEventListener("click", previousImage);
