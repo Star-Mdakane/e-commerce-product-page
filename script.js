@@ -17,6 +17,7 @@ const leftBtnLightbox = document.querySelector(".l-left-btn");
 const rightBtn = document.querySelector(".right-btn");
 const clearCart = document.querySelector(".remove");
 const success = document.querySelector(".success");
+const del = document.querySelector(".del");
 const checkout = document.querySelector(".checkout");
 const rightBtnLightbox = document.querySelector(".l-right-btn");
 const form = document.getElementById("actions");
@@ -248,8 +249,15 @@ form.addEventListener("submit", (e) => {
 
 // let numValue = Number(numInput);
 clearCart.addEventListener("click", () => {
+    // clearAmount();
+    // loadCart();
+
     clearAmount();
-    loadCart();
+    del.classList.add("show");
+    setTimeout(() => {
+        loadCart();
+        del.classList.remove("show");
+    }, 3000)
 })
 
 overlay.addEventListener("click", () => {
@@ -289,7 +297,6 @@ lightboxClose.addEventListener("click", () => {
 });
 
 checkout.addEventListener("click", () => {
-    // success.style.display = "flex"
     clearAmount();
     success.classList.add("show");
     setTimeout(() => {
@@ -297,16 +304,6 @@ checkout.addEventListener("click", () => {
         success.classList.remove("show");
     }, 3000)
 })
-
-// checkout.addEventListener("click", () => {
-//     console.log('Checkout clicked');
-//     if (success) {
-//         success.classList.add("show");
-//         console.log('Added "show" class');
-//     } else {
-//         console.log('Success element not found!');
-//     }
-// });
 
 
 rightBtn.addEventListener("click", nextImage);
