@@ -1,3 +1,5 @@
+// Variables
+
 const overlay = document.querySelector(".overlay");
 const closeMenuBtn = document.querySelector(".close-menu");
 const menu = document.querySelector(".menu");
@@ -19,10 +21,14 @@ const clearCart = document.querySelector(".remove");
 const success = document.querySelector(".success");
 const del = document.querySelector(".del");
 const checkout = document.querySelector(".checkout");
+const totNum = document.querySelector(".total-amount");
+const cartDisplay = document.querySelector(".cart-display");
+const itemNum = document.querySelector(".nr-of-items");
 const rightBtnLightbox = document.querySelector(".l-right-btn");
 const form = document.getElementById("actions");
 
-console.log('Success element:', success);
+
+// Functions
 
 imageSlider.forEach((btn, index) => {
     btn.addEventListener("click", () => {
@@ -171,18 +177,22 @@ const loadCart = () => {
     if (!totalAmount || totalAmount === 0) {
         emptyCart.style.display = "block"
         cartItem.style.display = "none"
+        cartDisplay.style.display = "none";
 
     } else {
-
-
         emptyCart.style.display = "none"
         cartItem.style.display = "flex"
+
+        const items = totalAmount / 125
+
+        totNum.textContent = `$${totalAmount}`;
+        itemNum.textContent = `x ${items}`;
+        cartDisplay.style.display = "flex";
+        cartDisplay.textContent = items;
     }
 }
 
 loadCart()
-// Event Handlers
-
 
 const loadAmount = () => {
     const totalAmount = localStorage.getItem('amount');
@@ -206,8 +216,6 @@ const clearAmount = () => {
     console.log('Amount cleared:', localStorage.getItem("amount"));
 }
 
-
-
 const numInput = document.querySelector('#number');
 let numValue = Number(numInput.value);
 
@@ -221,43 +229,37 @@ subtract.addEventListener('click', () => {
     }
 })
 
+// Event Handlers
+
 add.addEventListener("click", () => {
     numValue++;
     numInput.value = numValue;
 })
 
 form.addEventListener("submit", (e) => {
-
-
-
+    e.preventDefault();
     let isValid = true;
-
     numValue = Number(numInput.value);
-    if (isNaN(numValue) || numValue === 0) {
-        e.preventDefault();
 
+    if (isNaN(numValue) || numValue === 0) {
         isValid = false;
+        return;
     }
 
     let total = addTotal(numValue);
     addAmount(total);
-
-    // if (isValid) {
-
-    // }
+    loadCart();
+    numInput.value = 0;
+    numValue = 0;
 })
 
-// let numValue = Number(numInput);
 clearCart.addEventListener("click", () => {
-    // clearAmount();
-    // loadCart();
-
     clearAmount();
     del.classList.add("show");
     setTimeout(() => {
         loadCart();
         del.classList.remove("show");
-    }, 3000)
+    }, 2000)
 })
 
 overlay.addEventListener("click", () => {
@@ -304,7 +306,6 @@ checkout.addEventListener("click", () => {
         success.classList.remove("show");
     }, 3000)
 })
-
 
 rightBtn.addEventListener("click", nextImage);
 leftBtn.addEventListener("click", previousImage);

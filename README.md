@@ -50,6 +50,7 @@ Users should be able to:
 5. Thinking of clickable images. Changed them to button but thinking of changing them to checkboxes
 6. Getting the next and previous buttons to work on the lightbox.
 7. Tried and failed to change the colour of the svg even though I converted the images to svg, tried fill, color and stroke but nothing worked so I settled for background color.
+8. Faced problemss on checkout message where the cart clearing and load cart functions where clashing butI came to the solution of timing whereby one acted as async function so any timing or function which would force them to run synchronously would have worked.
 
 
 ### Built with
