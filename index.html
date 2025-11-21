@@ -88,7 +88,7 @@
           </nav>
         </div>
         <div class="user">
-          <button class="header-cart">
+          <button class="header-cart" aria-label="View Cart">
             <div class="cart-display">
 
             </div>
@@ -104,14 +104,14 @@
       </header>
       <div class="wrapper">
         <div class="image-section">
-          <div class="image-container">
+          <div class="image-container" aria-label="Click image to open lightbox">
             <div class="ctrl-btns">
-              <button class="left-btn">
+              <button class="left-btn" aria-label="Previous image">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="18">
                   <path fill="none" stroke="#1D2026" stroke-width="3" d="M11 1 3 9l8 8" />
                 </svg>
               </button>
-              <button class="right-btn">
+              <button class="right-btn" aria-label="Next image">
                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="18">
                   <path fill="none" stroke="#1D2026" stroke-width="3" d="m2 1 8 8-8 8" />
                 </svg>
@@ -119,16 +119,16 @@
             </div>
           </div>
           <div class="image-slide">
-            <button class="product active">
+            <button class="product active" aria-label="First slide">
               <img src="./images/image-product-1-thumbnail.jpg" alt="two sneakers">
             </button>
-            <button class="product">
+            <button class="product" aria-label="Second slide">
               <img src="./images/image-product-2-thumbnail.jpg" alt="sneakers with stones and branch">
             </button>
-            <button class="product">
+            <button class="product" aria-label="Third slide">
               <img src="./images/image-product-3-thumbnail.jpg" alt="sneaker on stones with folded sheet">
             </button>
-            <button class="product">
+            <button class="product" aria-label="Final slide">
               <img src="./images/image-product-4-thumbnail.jpg" alt="sneaker on stones">
             </button>
           </div>
@@ -161,13 +161,14 @@
           </div>
           <form class="actions" id="actions">
             <div class="num">
-              <button class="minus" type="button">
+              <button class="minus" type="button" aria-label="Minus an item">
                 <img src="./images/icon-minus.svg" alt="minus">
               </button>
               <form-control>
+                <label for="number"></label>
                 <input type="text" name="number" id="number" value="0" required>
               </form-control>
-              <button class="plus" type="button">
+              <button class="plus" type="button" aria-label="Add an item">
                 <img src="./images/icon-plus.svg" alt="plus">
               </button>
             </div>
@@ -186,12 +187,12 @@
     </section>
     <div class="menu">
       <div class="menu-content">
-        <div class="close-menu">
+        <button class="close-menu" aria-label="Close lightbox">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15">
             <path fill="#69707D" fill-rule="evenodd"
               d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" />
           </svg>
-        </div>
+        </button>
         <ul class="nav">
           <li><a href="#" class="text-3-b">
               Collections
