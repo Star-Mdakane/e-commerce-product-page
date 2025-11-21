@@ -104,7 +104,7 @@
       </header>
       <div class="wrapper">
         <div class="image-section">
-          <div class="image-container" aria-label="Click image to open lightbox">
+          <div class="image-container" aria-label="Click image to open lightbox" role="button" tabindex="0">
             <div class="ctrl-btns">
               <button class="left-btn" aria-label="Previous image">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="18">
@@ -165,7 +165,7 @@
                 <img src="./images/icon-minus.svg" alt="minus">
               </button>
               <form-control>
-                <label for="number"></label>
+                <label for="number" hidden>Number</label>
                 <input type="text" name="number" id="number" value="0" required>
               </form-control>
               <button class="plus" type="button" aria-label="Add an item">
